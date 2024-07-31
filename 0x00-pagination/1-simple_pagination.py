@@ -5,8 +5,9 @@ for pagination given a page number and page size and a class to paginate
 a dataset of popular baby names
 """
 
+
 from typing import Tuple, List
-import csv
+import cs
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
@@ -17,7 +18,8 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     - page_size (int): The number of items per page.
     
     Returns:
-    - Tuple[int, int]: A tuple containing the start index and end index for the given pagination parameters.
+    - Tuple[int, int]: A tuple containing the start index and 
+end index for the given pagination parameters.
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -25,7 +27,8 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 
 class Server:
     """Server class to paginate a database of popular baby names."""
-    
+
+
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
@@ -50,7 +53,8 @@ class Server:
         - page_size (int): The number of items per page.
         
         Returns:
-        - List[List]: A list of rows corresponding to the specified page and page size.
+        - List[List]: A list of rows corresponding to the 
+specified page and page size.
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
