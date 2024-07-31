@@ -2,7 +2,7 @@
 """
 This module provides a function for calculating the start and end indices
 for pagination given a page number and page size and a class to paginate
-a dataset of popular baby names.
+a dataset of popular baby names
 """
 
 from typing import Tuple, List
