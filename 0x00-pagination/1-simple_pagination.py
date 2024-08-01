@@ -9,14 +9,14 @@ a dataset of popular baby names
 from typing import Tuple, List
 import cs
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
     Calculate the start and end index for pagination.
-    
+
     Args:
     - page (int): The current page number (1-indexed)
     - page_size (int): The number of items per page.
-    
     Returns:
     - Tuple[int, int]: A tuple containing the start index and 
 end index for the given pagination parameters.
@@ -24,6 +24,7 @@ end index for the given pagination parameters.
     start = (page - 1) * page_size
     end = start + page_size
     return (start, end)
+
 
 class Server:
     """Server class to paginate a database of popular baby names."""
@@ -50,8 +51,7 @@ class Server:
         
         Args:
         - page (int): The current page number (1-indexed).
-        - page_size (int): The number of items per page.
-        
+        - page_size (int): The number of items per page.   
         Returns:
         - List[List]: A list of rows corresponding to the 
 specified page and page size.
@@ -61,8 +61,6 @@ specified page and page size.
 
         start, end = index_range(page, page_size)
         dataset = self.dataset()
-
-        # Handle out-of-range indices
         if start >= len(dataset):
             return []
 
