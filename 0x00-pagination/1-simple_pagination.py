@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-This module provides a function for calculating the start and end indices
+"""This module provides a function for calculating the start and end indices
 for pagination given a page number and page size and a class to paginate
 a dataset of popular baby names
 """
@@ -11,8 +10,7 @@ import cs
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """
-    Calculate the start and end index for pagination.
+    """Calculate the start and end index for pagination.
 
     Args:
     - page (int): The current page number (1-indexed)
@@ -47,8 +45,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """
-        Get the paginated data for a given page and page size.
+        """Get the paginated data for a given page and page size.
         Args:
         - page (int): The current page number (1-indexed).
         - page_size (int): The number of items per page.
@@ -59,7 +56,7 @@ specified page and page size.
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
-        dataset = self.dataset()
-        if start > len(dataset):
+        data = self.dataset()
+        if start > len(data):
             return []
-        return dataset[start:end]
+        return data[start:end]
