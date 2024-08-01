@@ -39,11 +39,11 @@ class Server:
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict[str, Any]:
         """
         Get paginated data and additional pagination information.
-        
+
         Args:
         - index (int): The current start index of the return page.
         - page_size (int): The number of items per page.
-        
+
         Returns:
         - dict: A dictionary containing pagination information.
         """
