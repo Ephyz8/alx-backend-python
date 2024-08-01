@@ -7,6 +7,7 @@ a dataset of popular baby names
 
 from typing import Tuple, List
 import cs
+import math
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
