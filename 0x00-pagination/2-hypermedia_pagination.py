@@ -11,7 +11,7 @@ import math
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """
-    Calculate the start and end index for pagination 
+    Calculate the start and end index for pagination
     Args:
     - page (int): The current page number (1-indexed).
     - page_size (int): The number of items per page.
@@ -45,11 +45,11 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
         Get the paginated data for a given page and page size.
- 
+
         Args:
         - page (int): The current page number (1-indexed).
         - page_size (int): The number of items per page.
- 
+
         Returns:
         - List[List]: A list of rows corresponding to the specified
         page and page size.
