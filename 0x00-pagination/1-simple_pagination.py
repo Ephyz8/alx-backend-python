@@ -42,7 +42,7 @@ class Server:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-            self.__dataset = dataset[1:]  # Exclude header
+            self.__dataset = dataset[1:]
 
         return self.__dataset
 
@@ -60,6 +60,6 @@ specified page and page size.
         assert isinstance(page_size, int) and page_size > 0
         start, end = index_range(page, page_size)
         dataset = self.dataset()
-        if start >= len(dataset):
+        if start > len(dataset):
             return []
         return dataset[start:end]
