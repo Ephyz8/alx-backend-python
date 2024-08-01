@@ -18,7 +18,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     - page (int): The current page number (1-indexed)
     - page_size (int): The number of items per page.
     Returns:
-    - Tuple[int, int]: A tuple containing the start index and 
+    - Tuple[int, int]: A tuple containing the start index and
 end index for the given pagination parameters.
     """
     start = (page - 1) * page_size
@@ -28,7 +28,6 @@ end index for the given pagination parameters.
 
 class Server:
     """Server class to paginate a database of popular baby names."""
-
 
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -53,12 +52,11 @@ class Server:
         - page (int): The current page number (1-indexed).
         - page_size (int): The number of items per page.   
         Returns:
-        - List[List]: A list of rows corresponding to the 
+        - List[List]: A list of rows corresponding to the
 specified page and page size.
         """
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-
         start, end = index_range(page, page_size)
         dataset = self.dataset()
         if start >= len(dataset):
