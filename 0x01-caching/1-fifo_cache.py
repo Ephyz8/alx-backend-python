@@ -16,7 +16,7 @@ class FIFOCache(BaseCaching):
         """ Add an item in the cache.
 
         Args:
-            key: The key associated with the item.
+            key: The key associated with the item.211
             item: The item to be cached.
 
         If key or item is None, this method does nothing.
