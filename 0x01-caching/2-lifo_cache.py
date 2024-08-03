@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-""" FIFOCache module """
+""" LIFOCache module """
 
 from base_caching import BaseCaching
 
 
-class FIFOCache(BaseCaching):
-    """ FIFOCache class is a caching system that uses the FIFO (First-In, First-Out) algorithm. """
+class LIFOCache(BaseCaching):
+    """ LIFOCache class caching system: Last-In, First-Out algorithm. """
 
     def __init__(self):
         """ Initialize the cache and order tracking list. """
@@ -20,8 +20,8 @@ class FIFOCache(BaseCaching):
             item: The item to be cached.
 
         If key or item is None, this method does nothing.
-        If the number of items in self.cache_data exceeds MAX_ITEMS, the first
-        item put in cache is discarded following FIFO algorithm.
+        If the number of items in self.cache_data exceeds MAX_ITEMS, the last
+        item put in cache is discarded following LIFO algorithm.
         """
         if key is None or item is None:
             return
@@ -31,9 +31,9 @@ class FIFOCache(BaseCaching):
         self.cache_data[key] = item
 
         if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-            oldest_key = self.keys_order.pop(0)
-            del self.cache_data[oldest_key]
-            print(f"DISCARD: {oldest_key}")
+            last_key = self.keys_order.pop()
+            del self.cache_data[last_key]
+            print(f"DISCARD: {last_key}")
 
     def get(self, key):
         """ Retrieve an item by key from the cache.
