@@ -30,7 +30,7 @@ class LIFOCache(BaseCaching):
         self.cache_data.move_to_end(key, last=True)
 
     def get(self, key):
-        """Retrieves an item by key.
+        """Retrieves an item by key
         """
         return self.cache_data.get(key, None)
     
